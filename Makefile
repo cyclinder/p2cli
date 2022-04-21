@@ -42,11 +42,6 @@ p2-darwin-x86_64:
     	-ldflags "-extldflags '-static' -X main.Version=$(shell git describe --long --dirty)" \
     	-o $@ ./cmd/p2
 
-p2-darwin-i386:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=386 go build -a \
-    	-ldflags "-extldflags '-static' -X main.Version=$(shell git describe --long --dirty)" \
-    	-o $@ ./cmd/p2
-
 p2-darwin-arm64:
 	CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -a \
     	-ldflags "-extldflags '-static' -X main.Version=$(shell git describe --long --dirty)" \
